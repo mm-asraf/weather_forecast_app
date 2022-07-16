@@ -1,36 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Row, Col, FormControl, Button } from "react-bootstrap";
-const City = () => {
+import { API_KEY, API_BASE_URL } from "../apis/config";
+
+const City = ({ onSearch }) => {
   const [city, setCity] = useState("");
 
+  //
   return (
-    <>
-      <Row>
-        <Col>
-          <h1>Search your city</h1>
-        </Col>
-      </Row>
-
-      <Row>
-        {/* xs={4} takes the one third  of the page*/}
-        <Col xs={4} className="text-center">
-          <FormControl
+    <div className="card_container">
+      <div className="inp">
+        <span className="sp_input">
+          <input
             placeholder="Enter city"
-            // update city value with the user's input
             onChange={(event) => setCity(event.target.value)}
-            // value will be the currently selected city
             value={city}
           />
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          {/* event handler for button click */}
-          <Button onClick={onSearch}>Check Weather</Button>
-        </Col>
-      </Row>
-    </>
+        </span>
+        <span className="sp_btn">
+          <button onClick={() => onSearch(city)} className="input">
+            Check Weather
+          </button>
+        </span>
+      </div>
+    </div>
   );
 };
 

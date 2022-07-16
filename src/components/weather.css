@@ -1,67 +1,39 @@
-.weather_container {
-  width: 816px;
-  height: 1145px;
-  margin: 0 auto;
-}
-
-.card_container {
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 20px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  align-items: center;
-  border-radius: 15px;
-  box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
-}
-
-.inp {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  margin-left: 15px;
-}
-
-.inp > input {
-  width: 45rem;
-  padding: 5px;
-  border: none;
-  outline: none;
-  margin-left: 12px;
-}
-
-.days {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.sm_container {
-  width: 93px;
-  height: 127px;
-  margin: 5px;
-  box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
-}
-
-.chart {
-  width: 800px;
-  height: 1200px;
-  margin: 10px;
-  box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
-}
-
-.detail {
-  font-size: 12px;
-}
-
-.c_size {
-  width: 8rem;
-}
+/* box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1); */
 
 .c_img {
   width: 60px;
   margin: 0 auto;
+}
+
+.sm_container {
+  width: 150px;
+}
+
+.sm_container:hover {
+  border: 3px solid rgb(56, 56, 236);
+}
+
+.sm2_container {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 230px;
+  margin-right: 236px;
+}
+
+.sp_input > input {
+  width: 53%;
+  box-shadow: 0 0 28px 4px rgb(0 0 0 / 10%);
+  outline: none;
+  border: none;
+  height: 45px;
+  padding: 12px;
+  margin-top: 20px;
+}
+
+.sp_btn > button {
+  margin-left: 12px;
+  height: 36px;
+  border: none;
+  padding: 7px;
+  box-shadow: 0 0 1px 4px rgb(0 0 0 / 10%);
 }
