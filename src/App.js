@@ -14,7 +14,7 @@ function App() {
       <City
         onSearch={(city) =>
           setUrl(
-            `${API_BASE_URL}/data/2.5/forecast?q=${city}&cnt=5&appid=${API_KEY}`
+            `${API_BASE_URL}/data/2.5/forecast?q=${city}&cnt=5&units=metric&appid=${API_KEY}`
           )
         }
       />
