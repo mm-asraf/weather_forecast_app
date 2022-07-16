@@ -1,6 +1,5 @@
 import React from "react";
-import { Card } from "react-bootstrap";
-import locate from "../Images/maps-and-flags.png";
+
 import "./weather.css";
 
 const WeatherCard = ({ dt, temp_min, temp_max, main, icon }) => {
