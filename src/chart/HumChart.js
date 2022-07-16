@@ -14,7 +14,6 @@ import {
   PointElement,
   Filler,
 } from "chart.js";
-import { API_BASE_URL, API_KEY } from "../apis/config";
 ChartJS.register(
   Title,
   Tooltip,
@@ -28,84 +27,34 @@ ChartJS.register(
 
 const AnalyticsData = [
   {
+    time: 0,
     celci: 10,
     temp: "1",
-    timeline: 10,
+    timeline: "5 am",
   },
   {
+    time: 20,
     celci: 20,
     temp: "2",
-    timeline: 40,
+    timeline: "2 pm",
   },
   {
+    time: 0,
     celci: 30,
     temp: "3",
-    timeline: 20,
-  },
-  {
-    celci: 20,
-    temp: "4",
-    timeline: 80,
-  },
-  {
-    celci: 70,
-    temp: "5",
-    timeline: 60,
-  },
-  {
-    celci: 10,
-    temp: "6",
-    timeline: 120,
-  },
-  {
-    celci: 70,
-    temp: "7",
-    timeline: 40,
-  },
-  {
-    celci: 80,
-    temp: "8",
-    timeline: 70,
-  },
-  {
-    celci: 30,
-    temp: "9",
-    timeline: 55,
-  },
-  {
-    celci: 100,
-    temp: "10",
-    timeline: 25,
-  },
-  {
-    celci: 70,
-    temp: "11",
-    timeline: 80,
-  },
-  {
-    celci: 120,
-    temp: "12",
-    timeline: 30,
+    timeline: "6 pm",
   },
 ];
 
-const data = () => {
-  fetch(
-    `${API_BASE_URL}/data/2.5/forecast?q=mumbai&appid=${API_KEY}&units=metric`
-  )
-    .then((response) => response.json())
-    .then((result) => console.log(result));
-};
-
-const Chart = ({ onSearch }) => {
+const HumChart = () => {
   const [data, setData] = useState({
-    labels: AnalyticsData.map((d) => d.temp),
+    labels: AnalyticsData.map((d) => d.timeline),
     timeline: 10,
 
     datasets: [
       {
-        label: "39",
-        data: AnalyticsData.map((d) => d.celci),
+        label: "Mid ",
+        data: AnalyticsData.map((d) => d.time),
         celci: 20,
         backgroundColor: "rgb(180,222,255)",
         borderColor: "rgb(6,168,250)",
@@ -124,7 +73,7 @@ const Chart = ({ onSearch }) => {
       <div className="disp">
         <div className="bxe">
           <div className="graph" style={{ width: "700px", height: "auto" }}>
-            <h2 className="head">Temperature</h2>
+            {/* <h2 className="head"></h2> */}
 
             <Line data={data}></Line>
           </div>
@@ -134,6 +83,6 @@ const Chart = ({ onSearch }) => {
   );
 };
 
-export default Chart;
+export default HumChart;
 
 //  backgroundColor: "linear-gradient(90deg, rgba(252,146,154,1) 0%, rgba(255,229,231,1) 35%)",

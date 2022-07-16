@@ -43,7 +43,34 @@
 
 .chart {
   width: 64%;
-  height: 1200px;
+  height: 1000px;
   margin: 0 auto;
   box-shadow: 0 0 28px 4px rgba(0, 0, 0, 0.1);
+}
+
+.det {
+  width: 90%;
+  display: flex;
+  margin: 0 auto;
+}
+
+.det > .common {
+  justify-content: center;
+  width: 50%;
+  height: 60px;
+  margin: 20px;
+  background-color: #f3fbff;
+}
+
+.sun {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sun > .f1 {
+  margin-left: 60px;
+}
+
+.sun > .f2 {
+  margin-right: 60px;
 }
