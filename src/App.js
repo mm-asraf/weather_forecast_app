@@ -9,6 +9,15 @@ import WeatherList from "./components/WeatherList";
 function App() {
   const { data, error, isLoading, setUrl } = UseFetch();
   console.log(data);
+
+  // error handling and loading
+
+  const getContent = () => {
+    if (error) return <h2>Error when fetching: {error}</h2>;
+    if (!data && isLoading) return <h2>LOADING...</h2>;
+    if (!data) return null;
+    return <WeatherList weathers={data.list} />;
+  };
   return (
     <Container className="App">
       <City
@@ -18,9 +27,8 @@ function App() {
           )
         }
       />
-
-      {/* conditionally render  */}
-      {data && <WeatherList weathers={data.list} />}
+      {/* don't forget the change */}
+      {getContent()}
     </Container>
   );
 }
